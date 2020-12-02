@@ -35,7 +35,7 @@ export default function App() {
         password: password,
       };
       axios
-        .post("http://192.168.0.106:1338/signin", data)
+        .post("http://localhost/signin", data)
         .then(function (response) {
           if (response.status === 200) {
             setState((prevState) => ({
@@ -81,7 +81,7 @@ export default function App() {
         password: password,
       };
       axios
-        .post("http://192.168.0.106:1338/signup", data, {
+        .post("http://localhost/signup", data, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -123,7 +123,7 @@ export default function App() {
 
   const getPrivateData = (history, location, source) => {
     axios
-      .get("http://192.168.0.106:1338/auth", {
+      .get("http://localhost/auth", {
         headers: {
           Authorization: localStorage.getItem("access_token"),
         },
